@@ -1,18 +1,20 @@
 <?php 
-    require('actions/questions/publishQuestionAction.php');
     require('actions/users/securityAction.php');
-    ?>
+    require('actions/questions/publishQuestionAction.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'includes/head.php'; ?>
 <body>
     <?php include 'includes/navbar.php'; ?>
+
     <br><br>
     <form class="container" method="POST"> <!--forms boostrap -->
 
         <?php
             if(isset($errorMsg)) {
-                echo '<p>'.$errorMsg.'</p>'; 
+                echo '<p>'.$errorMsg.'</p>';    
             }elseif(isset($successMsg)){
                 echo '<p>'.$successMsg.'</p>';
             }

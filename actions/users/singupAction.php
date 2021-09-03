@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require('actions/database.php');
 
@@ -24,7 +25,7 @@ if(isset($_POST['validate'])) {      // isset = vérifier qu'un variable exisite
 
             // Récupére les informations de l'utilisateur
             $getInfoOfThisUserReq = $bdd->prepare('SELECT id, pseudo, nom, prenom FROM users WHERE nom = ? AND prenom = ? AND pseudo = ?');      // on récupére l'identifiant de l'utisateur qui posséde le nom / prenom / pseudo renseigner par l'utilisateur 
-            $getInfoOfThisUserReq->execute(array($user_lastname, $user_lastname, $user_pseudo));        // on exécute la requéte 
+            $getInfoOfThisUserReq->execute(array($user_lastname, $user_firstname, $user_pseudo));        // on exécute la requéte 
 
             $usersInfos = $getInfoOfThisUserReq->fetch();
 

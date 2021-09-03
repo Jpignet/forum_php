@@ -1,4 +1,5 @@
 <?php
-if(!isset($_SESSION['auth'])) {
+session_start();
+if(!isset($_SESSION['auth'])){
     header('Location: login.php');
 }
