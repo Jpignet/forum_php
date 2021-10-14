@@ -23,7 +23,7 @@
                     <hr>
                     <p><?= $question_content; ?></p>
                     <hr>
-                    <small><?= '<a href="profile.php?id='.$question_id_author.'">'.$question_pseudo_author . '</a> ' . $question_publication_date; ?></small>
+                    <small>Par <?= '<a href="profile.php?id='.$question_id_author.'">'.$question_pseudo_author . '</a> '?> le <?= $question_publication_date; ?> à <?= $question_publication_heure; ?></small>
                 </section>
                 <br>
                 <section class="show-answers">
@@ -41,9 +41,7 @@
                             ?>
                             <div class="card">
                                 <div class="card-header">
-                                    <a href="profile.php?id=<?= $answer['id_auteur']; ?>">
-                                        <?= $answer['pseudo_auteur']; ?>
-                                    </a>
+                                    Réponse de <a href="profile.php?id=<?= $answer['id_auteur']; ?>"><?= $answer['pseudo_auteur']; ?></a> le <?= $answer['date_publication_reponse']; ?> à <?= $answer['heure_publication_reponse']; ?>
                                 </div>
                                 <div class="card-body">
                                     <?= $answer['contenu']; ?>

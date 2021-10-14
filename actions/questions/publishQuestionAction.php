@@ -13,11 +13,12 @@ if(isset($_POST['validate'])) {
         $question_desciption = nl2br(htmlspecialchars($_POST['description']));
         $question_content = nl2br(htmlspecialchars($_POST['content']));
         $question_date = date('d/m/Y');
+        $question_heure = date('H:i:s');
         $question_id_author = $_SESSION['id'];
         $question_pseudo_author = $_SESSION['pseudo'];
 
         // Insérer la questions su le forum 
-        $insertQuestionOnWebsite =$bdd->prepare('INSERT INTO questions(titre, description, contenu, id_auteur, pseudo_auteur, date_publication) VALUES(?, ?, ?, ?, ?, ?)');
+        $insertQuestionOnWebsite =$bdd->prepare('INSERT INTO questions(titre, description, contenu, id_auteur, pseudo_auteur, date_publication_question, heure_publication_question) VALUES(?, ?, ?, ?, ?, ?, ?)');
         $insertQuestionOnWebsite->execute(
             array(
                 $question_title, 
@@ -25,7 +26,8 @@ if(isset($_POST['validate'])) {
                 $question_content, 
                 $question_id_author, 
                 $question_pseudo_author, 
-                $question_date
+                $question_date,
+                $question_heure
             )
         );
 

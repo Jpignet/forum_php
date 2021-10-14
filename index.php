@@ -14,7 +14,7 @@
         <form method="GET">
             <div class="form-group row">
                 <div class="col-8">
-                    <input type="search" name="search" class="form-control">
+                    <input type="search" name="search"  placeholder="Mot(s) clé(s)" class="form-control">
                 </div>
                 <div class="col-4">
                     <button class="btn btn-success" type="submit">Rechercher</button>
@@ -37,7 +37,7 @@
                         <?php echo $question['description']; ?>
                     </div>
                     <div class="card-footer">
-                    Publié par <a href="profile.php?id=<?= $question['id_auteur']; ?>"><?= $question['pseudo_auteur']; ?></a> le <?= $question['date_publication']; ?>
+                    <small>Publié par <a href="profile.php?id=<?= $question['id_auteur']; ?>"><?= $question['pseudo_auteur']; ?></a> le <?= $question['date_publication_question']; ?> à <?= $question['heure_publication_question']; ?></small>
                     </div>
                 </div>
                 <br>

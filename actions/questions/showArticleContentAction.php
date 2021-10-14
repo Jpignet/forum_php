@@ -20,7 +20,9 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
         $question_content = $questionInfos['contenu'];
         $question_id_author = $questionInfos['id_auteur'];
         $question_pseudo_author = $questionInfos['pseudo_auteur'];
-        $question_publication_date = $questionInfos['date_publication'];
+        $question_publication_date = $questionInfos['date_publication_question'];
+        $question_publication_heure = $questionInfos['heure_publication_question'];
+
 
 
     }else{

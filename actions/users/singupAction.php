@@ -12,6 +12,7 @@ if(isset($_POST['validate'])) {      // isset = vérifier qu'un variable exisite
         $user_lastname = htmlspecialchars($_POST['lastname']);
         $user_firstname = htmlspecialchars($_POST['firstname']);
         $user_password = password_hash($_POST['password'], PASSWORD_DEFAULT);        // password_hash permet de crypter le mot de passe dans la base de donnée. il prende deux argument en entré 
+        $user_date_inscription = date('d/m/Y');
 
         // Vérifier si l'utilisateur existe déja sur le site 
         $checkIfUserAlreadyExists = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');     // On rechherche le pseudo dans la table User qui a été renseigner pour l'inscription    
@@ -20,8 +21,8 @@ if(isset($_POST['validate'])) {      // isset = vérifier qu'un variable exisite
         if($checkIfUserAlreadyExists->rowCount() == 0) {
 
             // Insérer l'utilisateur dans la BDD
-            $insertUserOnWebsite = $bdd->prepare('INSERT INTO users(pseudo, nom, prenom, mdp) VALUES(?, ?, ?, ?)');     //on insert l'utilisateur sur le site 
-            $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password));        // on insert tout les élements renseigné 
+            $insertUserOnWebsite = $bdd->prepare('INSERT INTO users(pseudo, nom, prenom, mdp, date_inscription) VALUES(?, ?, ?, ?, ?)');     //on insert l'utilisateur sur le site 
+            $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password, $user_date_inscription));        // on insert tout les élements renseigné 
 
             // Récupére les informations de l'utilisateur
             $getInfoOfThisUserReq = $bdd->prepare('SELECT id, pseudo, nom, prenom FROM users WHERE nom = ? AND prenom = ? AND pseudo = ?');      // on récupére l'identifiant de l'utisateur qui posséde le nom / prenom / pseudo renseigner par l'utilisateur 

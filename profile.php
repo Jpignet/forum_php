@@ -19,7 +19,9 @@
                     <div class="card-body">
                         <h4>@<?= $user_pseudo; ?></h4>
                         <hr>
-                        <p><?= $user_lastname . ' ' . $user_firstname; ?></p>
+                        Nom : <?= $user_lastname; ?><br>
+                        Prénom : <?= $user_firstname; ?><br>
+                        Inscrit depuis le : <?= $user_date_inscription; ?><br>
                     </div>
                 </div>
                 <br>
@@ -35,7 +37,7 @@
                                 <?= $question['description']; ?>
                             </div>
                             <div class="card-footer">
-                                Par <?= $question['pseudo_auteur']; ?> le <?= $question['date_publication']; ?>
+                                <small>Par <?= $question['pseudo_auteur']; ?> le <?= $question['date_publication_question']; ?> à <?= $question['heure_publication_question']; ?></small>
                             </div>
                         </div>
                         <br>
