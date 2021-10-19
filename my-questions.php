@@ -8,14 +8,38 @@
 <?php include 'includes/head.php'; ?>
 <body>
     <?php include 'includes/navbar.php'; ?>
+    
+    <br><br>
 
-    <br></br>
     <div class="container">
+        
+
+        <form method="GET">
+
+            <div class="form-group row">
+                <div class="col-8">
+                    <input type="search" name="search"  placeholder="Mot(s) clé(s)" class="form-control">
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-success" type="submit">Rechercher</button>
+                </div>
+            </div>
+        </form>
+        
+        <br><br>
 
         <?php
+            if(isset($errorMsg)) {
+                echo '<p>'.$errorMsg.'</p>';    
+            }elseif(isset($successMsg)){
+                echo '<p>'.$successMsg.'</p>';
+            }
+        ?>
 
+        <?php
             while($question = $getAllMyQuestions->fetch()){
                 ?>
+
                 <div class="card">
                     <h5 class="card-header">
                         <a href="article.php?id=<?php echo $question['id']; ?>">
@@ -32,10 +56,11 @@
                     </div>
                 </div>
                 <br>
+
                 <?php
             }
-
         ?>
+
     </div>
 </body>
 </html>

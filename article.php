@@ -1,8 +1,8 @@
 <?php 
     session_start();
     require('actions/questions/showArticleContentAction.php');
-    require('actions/questions/postAnswerAction.php');
-    require('actions/questions/showAllAnswersOfQuestionAction.php')
+    require('actions/answers/postAnswerAction.php');
+    require('actions/answers/showAllAnswersOfQuestionAction.php')
     ?>
 
 <!DOCTYPE html>
@@ -41,10 +41,10 @@
                             ?>
                             <div class="card">
                                 <div class="card-header">
-                                    Réponse de <a href="profile.php?id=<?= $answer['id_auteur']; ?>"><?= $answer['pseudo_auteur']; ?></a> le <?= $answer['date_publication_reponse']; ?> à <?= $answer['heure_publication_reponse']; ?>
+                                    Réponse de <a href="profile.php?id=<?= $answer['id_auteur_answer']; ?>"><?= $answer['pseudo_auteur_answer']; ?></a> le <?= $answer['date_publication_reponse']; ?> à <?= $answer['heure_publication_reponse']; ?>
                                 </div>
                                 <div class="card-body">
-                                    <?= $answer['contenu']; ?>
+                                    <?= $answer['contenu_answer']; ?>
                                 </div>
                             </div>
                             <br>

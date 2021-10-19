@@ -12,19 +12,23 @@
         <li class="nav-item">
           <a class="nav-link" href="publish-question.php">Publier une question</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="my-questions.php">Mes questions</a>
-        </li>
         <?php
           if(isset($_SESSION['auth'])){
             ?>
-            <li class="nav-item">
-              <a class="nav-link" href="profile.php?id=<?= $_SESSION['id']; ?>">Mon Profil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="actions/users/logoutAction.php">Déconnexion</a>
-            </li>
-            <?php
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mon Compte
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="profile.php?id=<?= $_SESSION['id']; ?>">Mon Profil</a></li>
+            <li><a class="dropdown-item" href="my-questions.php">Mes questions</a></li>
+            <li><a class="dropdown-item" href="my-answers?id=<?= $_SESSION['id']; ?>">Mes réponses</a></li>
+          </ul>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="actions/users/logoutAction.php">Déconnexion</a>
+          </li>
+          <?php
           }
         ?>
       </ul>

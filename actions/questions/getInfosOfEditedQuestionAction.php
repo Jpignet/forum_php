@@ -15,11 +15,11 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
 
         // Récupérer les données de la question 
         $questionInfos = $checkIfQuestionExists->fetch();
-        if($questionInfos['id_auteur'] == $_SESSION['id']){
+        if($questionInfos['id_auteur_question'] == $_SESSION['id']){
             
             $question_title = $questionInfos['titre'];
             $question_description = $questionInfos['description'];
-            $question_content = $questionInfos['contenu'];
+            $question_content = $questionInfos['contenu_question'];
 
             // permet de supprimer les balises <br> dans le code html
             $question_description = str_replace('<br />', '', $question_description);

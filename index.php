@@ -37,7 +37,7 @@
                         <?php echo $question['description']; ?>
                     </div>
                     <div class="card-footer">
-                    <small>Publié par <a href="profile.php?id=<?= $question['id_auteur']; ?>"><?= $question['pseudo_auteur']; ?></a> le <?= $question['date_publication_question']; ?> à <?= $question['heure_publication_question']; ?></small>
+                    <small>Publié par <a href="profile.php?id=<?= $question['id_auteur_question']; ?>"><?= $question['pseudo_auteur_question']; ?></a> le <?= $question['date_publication_question']; ?> à <?= $question['heure_publication_question']; ?></small>
                     </div>
                 </div>
                 <br>

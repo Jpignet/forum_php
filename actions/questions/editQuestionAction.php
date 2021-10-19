@@ -14,7 +14,7 @@ if(isset($_POST['validate'])){
         $new_question_content = nl2br(htmlspecialchars($_POST['content']));
 
         // Modifier les informations de la question qui posséde l'id rentré en paramétre dans l'URL
-        $editQuestionOnWebite = $bdd->prepare('UPDATE questions SET titre = ?, description = ?, contenu = ? WHERE id = ?');    // met a jour la table question. met a our le titre le contenu la description qui posséde cette identifiant 
+        $editQuestionOnWebite = $bdd->prepare('UPDATE questions SET titre = ?, description = ?, contenu_question = ? WHERE id = ?');    // met a jour la table question. met a our le titre le contenu la description qui posséde cette identifiant 
         $editQuestionOnWebite->execute(array($new_question_title, $new_question_description, $new_question_content, $idOfQuestion));
 
         // redirection vers la page d'affichage des question de l'utilisateur 

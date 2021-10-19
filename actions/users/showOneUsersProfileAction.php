@@ -23,7 +23,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
         $user_date_inscription = $usersInfos['date_inscription'];
 
         // Récupérer toutes les questions publié par l'utilisateur
-        $getHisQuestions = $bdd->prepare('SELECT * FROM questions WHERE id_auteur = ? ORDER BY id DESC');
+        $getHisQuestions = $bdd->prepare('SELECT * FROM questions WHERE id_auteur_question = ? ORDER BY id DESC');
         $getHisQuestions->execute(array($idOfUser));
 
     }else{

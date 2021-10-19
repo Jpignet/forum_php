@@ -18,7 +18,7 @@ if(isset($_POST['validate'])) {
         $question_pseudo_author = $_SESSION['pseudo'];
 
         // Insérer la questions su le forum 
-        $insertQuestionOnWebsite =$bdd->prepare('INSERT INTO questions(titre, description, contenu, id_auteur, pseudo_auteur, date_publication_question, heure_publication_question) VALUES(?, ?, ?, ?, ?, ?, ?)');
+        $insertQuestionOnWebsite =$bdd->prepare('INSERT INTO questions(titre, description, contenu_question, id_auteur_question, pseudo_auteur_question, date_publication_question, heure_publication_question) VALUES(?, ?, ?, ?, ?, ?, ?)');
         $insertQuestionOnWebsite->execute(
             array(
                 $question_title, 
