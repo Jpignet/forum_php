@@ -25,6 +25,8 @@
                         Nom : <?= $user_lastname; ?><br>
                         Prénom : <?= $user_firstname; ?><br>
                         Inscrit depuis le : <?= $user_date_inscription; ?><br>
+                        <br>
+                        Nombre de question posé : <?= $user_nombre_question; ?><br>
                     </div>
                 </div>
                 <br>

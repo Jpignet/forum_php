@@ -2,7 +2,7 @@
 
 require('actions/database.php');
 
-if(isset($_GET['id']) AND !empty($_GET['id'])){
+if(!empty($_SESSION['id'])){
 
     if(isset($_POST['validate'])){
 
@@ -18,6 +18,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
         }
 
     }
+    
 }else{
-    $errorMsg = "WARNING"; // rajout pour message d'erreur 
+    $errorMsg = "Veuillez vous authentifier"; // rajout pour message d'erreur 
 }

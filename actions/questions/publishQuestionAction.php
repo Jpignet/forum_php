@@ -6,7 +6,7 @@ require('actions/database.php');
 if(isset($_POST['validate'])) {
 
     // Vérifier si les champs ne sont pas vide
-    if(!empty($_POST['title']) AND !empty($_POST['description']) AND !empty($_POST['content'])) {
+    if(isset($_GET['id_user']) AND !empty($_POST['title']) AND !empty($_POST['description']) AND !empty($_POST['content'])) {
  
         // les données de la questions 
         $question_title = htmlspecialchars($_POST['title']);
@@ -30,6 +30,11 @@ if(isset($_POST['validate'])) {
                 $question_heure
             )
         );
+
+        $idOfUser = $_GET['id_user'];
+
+        $addCountQuestion = $bdd->prepare('UPDATE users SET nombre_question = nombre_question + 1 WHERE id = ?');
+        $addCountQuestion->execute(array($idOfUser));
 
         $successMsg = "Votre question a bien été publiée sur le forum";
 

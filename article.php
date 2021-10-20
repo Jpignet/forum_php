@@ -15,7 +15,12 @@
     <div class="container">
 
         <?php
-            if(isset($errorMsg)){ echo $errorMsg; }
+            if(isset($errorMsg)){ 
+                echo $errorMsg; ?>
+                <br><br> 
+            <?php
+            
+            }
             if(isset($question_publication_date)){
                 ?>
                 <section class="show_content">

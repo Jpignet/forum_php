@@ -9,10 +9,11 @@ if(!isset($_SESSION['auth'])){
 require('../database.php');
 
 // Vérifier si l'id est rentré en paramétre de l'URL
-if(isset($_GET['id']) AND !empty($_GET['id'])){
+if(isset($_GET['id_user']) AND isset($_GET['id']) AND !empty($_GET['id'])){
 
     // L'id de la question en paramétre 
     $idOfTheQuestion = $_GET['id'];
+    $idOfUser = $_GET['id_user'];
 
     // Vérifier si la question existe 
     $checkIfQuestionExists = $bdd->prepare('SELECT id_auteur_question FROM questions WHERE id = ?', array($idOfTheQuestion)); // séléctionner toute les données dans notre table question qui posséde l'id rentré par l'utilisateur
@@ -27,6 +28,9 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             // Supprimer la question en fonction de sont id rentré en pramètre
             $deleteThisQuestion = $bdd->prepare('DELETE FROM questions WHERE id = ?');
             $deleteThisQuestion->execute(array($idOfTheQuestion));
+
+            $deleteCountQuestion = $bdd->prepare('UPDATE users SET nombre_question = nombre_question - 1 WHERE id = ?');
+            $deleteCountQuestion->execute(array($idOfUser));
 
             // Rediriger l'utilisateur vers ses questions
             header('Location: ../../my-questions.php');
