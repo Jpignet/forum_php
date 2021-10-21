@@ -27,6 +27,7 @@
                         Inscrit depuis le : <?= $user_date_inscription; ?><br>
                         <br>
                         Nombre de question posé : <?= $user_nombre_question; ?><br>
+                        Nombre de réponse : <?= $user_nombre_reponse; ?><br>
                     </div>
                 </div>
                 <br>

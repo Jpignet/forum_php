@@ -8,7 +8,7 @@ if(!isset($_SESSION['auth'])){
 
 require('../database.php');
 
-// Vérifier si l'id est rentré en paramétre de l'URL
+// Vérifier si l'id_user et l'id(questions) est rentré en paramétre de l'URL
 if(isset($_GET['id_user']) AND isset($_GET['id']) AND !empty($_GET['id'])){
 
     // L'id de la question en paramétre 
@@ -29,6 +29,7 @@ if(isset($_GET['id_user']) AND isset($_GET['id']) AND !empty($_GET['id'])){
             $deleteThisQuestion = $bdd->prepare('DELETE FROM questions WHERE id = ?');
             $deleteThisQuestion->execute(array($idOfTheQuestion));
 
+            // Mettre à jour la table UPDATE l'orsque l'utilisateur suprime une question 
             $deleteCountQuestion = $bdd->prepare('UPDATE users SET nombre_question = nombre_question - 1 WHERE id = ?');
             $deleteCountQuestion->execute(array($idOfUser));
 

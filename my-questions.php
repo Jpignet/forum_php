@@ -42,7 +42,6 @@
 
                 <div class="card">
                     <h5 class="card-header">
-                        <a href="article.php?id=<?php echo $question['id']; ?>">
                             <?php echo $question['titre']; ?>
                         </a>
                     </h5>
@@ -50,7 +49,7 @@
                         <p class="card-text">
                             <?php echo $question['description']; ?>
                         </p>
-                        <a href="article.php?id=<?php echo $question['id']; ?>"" class="btn btn-primary">Accéder à la question</a>
+                        <a href="article.php?idquestion=<?php echo $question['id']; ?>&amp;id_auteur_question=<?php echo $question['id_auteur_question']; ?>" class="btn btn-primary">Accéder à la question</a>
                         <a href="edit-question.php?id=<?php echo $question['id']; ?>" class="btn btn-warning">Modifier la question</a>      <!-- clic sur bouton -> renvoi vers l'id en question  --> 
                         <a href="actions/questions/deleteQuestionAction.php?id_user=<?php echo $question['id_auteur_question']; ?>&amp;id=<?php echo $question['id']; ?>" class="btn btn-danger">Supprimer la question</a>      <!-- &amp permet de concaténer plusieur élement dans l'URL  --> 
                     </div>

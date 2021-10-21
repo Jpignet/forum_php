@@ -3,10 +3,10 @@
 require('actions/database.php');
 
 // Vérifier si l'id de la question est rentrée dans l'URL
-if(isset($_GET['id']) AND !empty($_GET['id'])){
+if(isset($_GET['idquestion']) AND !empty($_GET['idquestion'])){
     
     // Récupérer l'id de la question 
-    $idOfTheQuestion = $_GET['id'];
+    $idOfTheQuestion = $_GET['idquestion'];
     $checkIfQuestionExists = $bdd->prepare('SELECT * FROM questions WHERE id = ?');
     $checkIfQuestionExists->execute(array($idOfTheQuestion));
 

@@ -44,7 +44,7 @@
                                     <?php echo $question['contenu_answer']; ?>   
                                 </div>
                                 <br>
-                                <a href="article.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Go Topic</a>
+                                <a href="article.php?idquestion=<?php echo $question['id']; ?>&amp;id_auteur_question=<?php echo $question['id_auteur_question']; ?>" class="btn btn-primary">Accéder à la question</a>
                             </div>
                         </div>
                     </div>

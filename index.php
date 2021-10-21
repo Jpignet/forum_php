@@ -29,7 +29,7 @@
                 ?>
                 <div class="card">
                     <div class="card-header">
-                        <a href="article.php?id=<?php echo $question['id']; ?>">
+                        <a href="article.php?idquestion=<?php echo $question['id']; ?>&amp;id_auteur_question=<?php echo $question['id_auteur_question']; ?>">
                             <?php echo $question['titre']; ?>
                         </a>
                     </div>

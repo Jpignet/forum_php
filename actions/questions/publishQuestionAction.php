@@ -31,8 +31,10 @@ if(isset($_POST['validate'])) {
             )
         );
 
+        // On récupére l'id_user de l'URL pour le mettre dans une variable propre
         $idOfUser = $_GET['id_user'];
 
+        // Mettre à jour la ligne NOMBRE_QUESTION de la table USERS. On rajoute une questions 
         $addCountQuestion = $bdd->prepare('UPDATE users SET nombre_question = nombre_question + 1 WHERE id = ?');
         $addCountQuestion->execute(array($idOfUser));
 

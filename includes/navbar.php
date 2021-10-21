@@ -26,7 +26,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="profile.php?id=<?= $_SESSION['id']; ?>">Mon Profil</a></li>
             <li><a class="dropdown-item" href="my-questions.php?id_user=<?= $_SESSION['id']; ?>">Mes questions</a></li>
-            <li><a class="dropdown-item" href="my-answers?id=<?= $_SESSION['id']; ?>">Mes réponses</a></li>
+            <li><a class="dropdown-item" href="my-answers?id_user=<?= $_SESSION['id']; ?>">Mes réponses</a></li>
           </ul>
         </li>
           <li class="nav-item">
